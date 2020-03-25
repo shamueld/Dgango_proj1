@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>Users_page</title>
+        <!-- <link rel="stylesheet" href="{% static "css/myStyle.css" %}"> -->
+    </head>
+
+    <body>
+        <h1>Welcome!!!</h1>
+
+        <h2>Submit bellow form to add new user</h2>
+        <form method="POST">
+            {{ user_Form.as_p }}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+
+        <h3>Bellow is the list of users available</h3>
+        
+        {% if users %}
+            <ol>
+            {% for user in users %}
+                    <li><b>User info:</b></li>
+                    <ul>
+                        <li>{{ user.first_name }}</li>
+                        <li>{{ user.last_name }}</li>
+                        <li>{{ user.email }}</li>
+                    </ul>
+            {% endfor %}
+            </ol>
+        {% endif %}
+    </body>
+</html>

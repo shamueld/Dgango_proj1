@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Template_App</title>
+        <link rel="stylesheet" href="{% static "css/myStyle.css" %}">
+    </head>
+    <body>
+        <h3>Welcome to template app</h3>
+        <h2>Following is the list of Webpages from Database</h2>
+
+        {% if access_records %}            
+            <table>
+                <thead>
+                    <th>Webpage_Name</th>
+                    <th>Date</th>
+                    <th>URL</th>
+                    <th>Topic Name</th>
+                </thead>
+                <tr>
+                {% for acc_rec in access_records %}
+                    <td>{{ acc_rec.name }}</td>
+                    <td>{{ acc_rec.date }}</td> 
+                    <td>{{ web.objects }}</td>           
+                </tr>
+                {% endfor %}
+            </table>
+            
+            <!-- {% for topic in top %}
+                {{ topic.top_name }}
+            {% endfor %}
+            
+            {% for webpage in web %}
+                {{  webpage.url }}
+            {% endfor %} -->
+
+        {% endif %}
+    </body>
+</html>

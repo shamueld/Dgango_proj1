@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Help Page</title>
+        <link rel="stylesheet" href="{% static "css/myStyle.css" %}">
+    </head>
+    <body>
+        <h1>This is a help page!!</h1>
+        <em>{{ help_var }}</em>
+        <br>
+        <b>{{ help_var2 }}</b>
+        <br>
+        <img src="{% static "images/bird.jpg" %}" alt="OOOOPssss!!">
+    </body>
+</html>

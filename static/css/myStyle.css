@@ -1,0 +1,12 @@
+h2 {
+    color: red
+}
+
+body {
+    background: green
+    ;
+}
+
+table, th, td{
+    border: 2px solid black;
+}
